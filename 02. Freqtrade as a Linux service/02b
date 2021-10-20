@@ -1,0 +1,18 @@
+# open config.json
+nano /home/dcd/freqtrade/config.json
+
+# Edit config.json
+    "bot_name": "freqtrade bot",
+    "user_data_dir": "/home/dcd/freqtrade/user_data/",
+    "strategy_path": "/home/dcd/freqtrade/user_data/",
+    "strategy": "SampleStrategy",
+    "db_url": "sqlite:////home/dcd/freqtrade/user_data/tradesv3.sqlite",
+    "logfile": "syslog:/dev/log",
+    "initial_state": "running",
+    "forcebuy_enable": false,
+    "internals": {
+            "process_throttle_secs": 5,
+            "heartbeat_interval": 60,
+            "sd_notify": true
+    }
+

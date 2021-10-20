@@ -1,0 +1,22 @@
+# Creating service file
+sudo nano /etc/systemd/system/freqtrade.service
+
+# Paste contents
+[Unit]
+Description=Freqtrade bot
+[Service]
+WorkingDirectory=/home/dcd/freqtrade
+ExecStart=/home/dcd/freqtrade/.env/bin/freqtrade trade --config /home/dcd/freqtrade/config.json
+Restart=always
+RestartSec=10
+Type=notify
+NotifyAccess=all
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=freqtrade
+User=root
+Group=root
+Environment=NODE_ENV=production
+[Install]
+WantedBy=multi-user.target
+
