@@ -1,0 +1,14 @@
+# First activate the Python virtual environment
+source ./.env/bin/activate
+
+# Download data:    
+freqtrade download-data --config newconfig.json --days 9 -t 5m
+
+# Backtesting:
+freqtrade backtesting --config newconfig.json --strategy SampleStrategy
+
+# Hyperopt 
+freqtrade hyperopt --hyperopt-loss SharpeHyperOptLossDaily --spaces roi stoploss trailing --strategy SampleStrategy--config newconfig.json -e 100
+
+# Start trading:    
+freqtrade trade --config newconfig.json --strategy SampleStrategy

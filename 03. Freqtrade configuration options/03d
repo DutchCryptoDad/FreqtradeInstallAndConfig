@@ -1,0 +1,14 @@
+# Bot start with config file stacking
+freqtrade trade --config newconfig.json --config private/secret.json  --strategy SampleStrategy
+
+# PREVALENCE
+# Set an environment variable which has higher prevalence than config file settings
+export FREQTRADE__STAKE_AMOUNT=9999
+
+printenv | grep FREQ
+
+# Check bashrc. for environment variables
+sudo nano ~/.bashrc
+
+# Unset the variable
+unset FREQTRADE__STAKE_AMOUNT

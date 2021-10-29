@@ -1,0 +1,5 @@
+# Normal bot start command
+freqtrade trade --config newconfig.json --strategy SampleStrategy
+
+# Bot start with config file stacking
+freqtrade trade --config newconfig.json --config private/secret.json  --strategy SampleStrategy

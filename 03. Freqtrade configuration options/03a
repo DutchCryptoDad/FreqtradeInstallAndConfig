@@ -1,0 +1,6 @@
+# First activate the Python virtual environment
+cd freqtrade/
+source ./.env/bin/activate
+
+# Create a new config
+freqtrade new-config --config newconf.json
