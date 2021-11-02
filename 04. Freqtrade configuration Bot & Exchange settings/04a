@@ -1,0 +1,57 @@
+# Create a new config
+freqtrade --config config.json
+
+# Use config with installed example strategy
+freqtrade trade --config config.json --strategy SampleStrategy
+
+# Edit strategy with nano editor (use your own if yo u like)
+nano config.json
+
+# Bot specific config options (EXPERIMENTAL!!!!)
+    "bot_name": "MONEYMAKER",
+    "initial_state": "running",
+    "forcebuy_enable": true,
+    "user_data_dir": "/home/dcd/freqtrade/user_data/",
+    "strategy_path": "/home/dcd/freqtrade/user_data/",
+    "strategy": "SampleStrategy",
+    "db_url": "sqlite:////home/dcd/freqtrade/user_data/awesometrades.sqlite",
+    "logfile": "syslog:/dev/log",
+    "internals": {
+        "process_throttle_secs": 1,
+        "heartbeat_interval": 1,
+        "sd_notify": true,
+    } 
+
+
+# Exchange specific configuration options (EXPERIMENTAL!!!!!)
+    "exchange": {
+        "name": "binance",
+        "key": "thisisnotarealkey123",
+        "secret": "thisisnotarealpassword123",
+        "password": "",
+        "sandbox": true,
+        "log_responses": true,
+        "markets_refresh_interval": 5,
+        "skip_pair_validation": true,
+        "skip_open_order_update": true,
+        "ccxt_config": {},
+        "ccxt_async_config": {},
+        "pair_whitelist": [
+//      "BTCD/USDT",
+//      "ETH/USDT"
+        ".*/USDT"
+        ],
+
+        "pair_blacklist": [
+            "DOGE/USDT"
+        ]
+    },
+    "pairlists": [
+        {
+            "method": "StaticPairList",
+//            "method": "VolumePairList",
+            "number_assets": 20,
+            "sort_key": "quoteVolume",
+            "min_value": 0,
+            "refresh_period": 1800
+        
