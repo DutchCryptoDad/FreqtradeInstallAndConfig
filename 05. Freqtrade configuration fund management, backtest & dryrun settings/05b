@@ -1,0 +1,11 @@
+# Go to freqtrade
+cd freqtrade/
+source ./.env/bin/activate
+nano config.json
+
+{
+    "fee": 0.002,
+    "dry_run": true,
+    "dry_run_wallet": 5000,
+    
+

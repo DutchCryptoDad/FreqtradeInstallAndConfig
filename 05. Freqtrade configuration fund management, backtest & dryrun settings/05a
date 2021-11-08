@@ -1,0 +1,20 @@
+# Go to freqtrade
+cd freqtrade/
+source ./.env/bin/activate
+nano config.json
+
+{
+    "max_open_trades": 3,
+    "stake_currency": "USDT",
+    "stake_amount": 100,
+//  One bot ---
+    "tradable_balance_ratio": 0.98,
+//  Multi bot ---
+//    "available_capital": 500,
+    "amend_last_stake_amount": true,
+    "last_stake_amount_min_ratio": 0.55,
+    "amount_reserve_percent": 0.06
+    "fiat_display_currency": "USD",
+
+
+
