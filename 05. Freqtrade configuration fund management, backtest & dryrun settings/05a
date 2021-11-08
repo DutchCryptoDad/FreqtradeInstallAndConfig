@@ -4,7 +4,7 @@ source ./.env/bin/activate
 nano config.json
 
 {
-    "max_open_trades": 3,
+    "max_open_trades": 2,
     "stake_currency": "USDT",
     "stake_amount": 100,
 //  One bot ---
