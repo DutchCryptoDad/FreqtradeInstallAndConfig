@@ -13,7 +13,7 @@ nano config.json
 //    "available_capital": 500,
     "amend_last_stake_amount": true,
     "last_stake_amount_min_ratio": 0.55,
-    "amount_reserve_percent": 0.06
+    "amount_reserve_percent": 0.06,
     "fiat_display_currency": "USD",
 
 
