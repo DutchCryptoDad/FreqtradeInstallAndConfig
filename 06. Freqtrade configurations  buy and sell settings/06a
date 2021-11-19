@@ -1,0 +1,59 @@
+# Start freqtrade dryrun trading (check config on dryrun: true)
+cd freqtrade/
+source ./.env/bin/activate
+freqtrade trade --config config.json --strategy SampleStrategy
+
+# Edit strategy with nano editor
+nano config.json
+
+
+// BUY & SELL SETTINGS
+    "ignore_buying_expired_candle_after": 600,
+    // Sell strategy settings
+    "use_sell_signal": true,
+    "sell_profit_only": false,
+    "sell_profit_offset": 0.0,
+    "cancel_open_orders_on_exit": false,
+    "custom_price_max_distance_ratio": 0.02,
+    // Timeout settings
+    "unfilledtimeout": {
+        "buy": 10,
+        "sell": 30,
+        "exit_timeout_count": 0,
+        "unit": "minutes",
+    },
+    // Bid strategy settings
+    "bid_strategy": {
+        "price_side": "bid",
+        "use_order_book": true,
+        "order_book_top": 1,
+        "ask_last_balance": 0.0,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1.1,
+        },
+    },
+    // Ask strategy settings
+    "ask_strategy":{
+        "price_side": "ask",
+        "use_order_book": true,
+        "order_book_top": 1,
+        "ask_last_balance": 0.0,
+    },
+    // Order types and conditions
+    "order_types": {
+        "buy": "limit",
+        "sell": "limit",
+        "emergencysell": "market",
+        "forcesell": "market",
+        "forcebuy": "market",
+        "stoploss": "market",
+        "stoploss_on_exchange": false,
+        "stoploss_on_exchange_interval": 60,
+    },
+    // Order policies
+    "order_time_in_force": {
+        "buy": "gtc",
+        "sell": "gtc",
+    },
+
