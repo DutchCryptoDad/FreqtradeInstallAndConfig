@@ -1,3 +1,6 @@
+# First activate the Python virtual environment
+source ./.env/bin/activate
+
 # Normal bot start command
 freqtrade trade --config newconfig.json --strategy SampleStrategy
 

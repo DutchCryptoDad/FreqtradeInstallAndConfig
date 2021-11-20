@@ -1,8 +1,11 @@
+# First activate the Python virtual environment
+source ./.env/bin/activate
+
 # Bot start with config file stacking
-freqtrade trade --config newconfig.json --config private/secret.json  --strategy SampleStrategy
+freqtrade trade --config config.json --config private/secret.json
 
 # PREVALENCE
-# Set an environment variable which has higher prevalence than config file settings
+# Set an ENVIRONMENT VARIABLE which has higher prevalence than config file settings
 export FREQTRADE__STAKE_AMOUNT=9999
 
 printenv | grep FREQ
@@ -12,3 +15,7 @@ sudo nano ~/.bashrc
 
 # Unset the variable
 unset FREQTRADE__STAKE_AMOUNT
+
+# Bot start with COMMAND LINE OVERRIDE
+freqtrade trade --config newconfig.json --strategy NewStrategy
+

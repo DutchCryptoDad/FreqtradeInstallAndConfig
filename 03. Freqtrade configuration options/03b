@@ -2,13 +2,13 @@
 source ./.env/bin/activate
 
 # Download data:    
-freqtrade download-data --config newconfig.json --days 9 -t 5m
+freqtrade download-data --config config.json --days 9 -t 5m
 
 # Backtesting:
-freqtrade backtesting --config newconfig.json --strategy SampleStrategy
+freqtrade backtesting --config config.json --strategy SampleStrategy
 
 # Hyperopt 
-freqtrade hyperopt --hyperopt-loss SharpeHyperOptLossDaily --spaces roi stoploss trailing --strategy SampleStrategy--config newconfig.json -e 100
+freqtrade hyperopt --hyperopt-loss SharpeHyperOptLossDaily --spaces roi stoploss trailing --strategy SampleStrategy--config config.json -e 100
 
 # Start trading:    
-freqtrade trade --config newconfig.json --strategy SampleStrategy
+freqtrade trade --config config.json --strategy SampleStrategy
